@@ -10,3 +10,9 @@ h1{
     color: var(--title-color);
     font-weight: 900;
 }
+
+
+img {
+    max-width: 128px;
+    max-height: 128px;
+}

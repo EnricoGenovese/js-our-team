@@ -37,27 +37,6 @@ const teamMembers = [
   }
 ];
 
-// card template: da aggiungere con un ciclo per ogni oggetto dell'array teamMembers
-
-/*
-<div class="row d-flex">
-    <div class="w-25">
-        <img src="" class="card-img-top" alt="...">
-    </div>
-    <div class="col-sm-6 col-md-4 mb-3 mb-sm-0">
-        <div class="card">
-            <div class="card-body">
-                <h5 id="name" class="card-title text-uppercase">Special title treatment</h5>
-                <p id="role" class="card-text">With supporting text below as a natural lead-in to additional
-                    content.</p>
-                <a id="email" class="py-1">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-*/
-
-
 
 addCard();
 
@@ -66,25 +45,24 @@ function addCard() {
   let teamCards = "";
   //
   for(let member of teamMembers) {
-    teamCards += 
-    `
-    <div class="col-sm-6 col-md-6 col-lg-4">
-      <div class="d-flex">
-        <div>
-          <img src="./${member.img}" class="card-img-top" alt="${member.name}">
-        </div>
-        <div>
-          <div class="card">
-            <div class="card-body">
-              <h5 id="name" class="card-title text-uppercase">${member.name}</h5>
-              <p id="role" class="card-text">${member.role}</p>
-              <a id="email" class="py-1">${member.email}</a>
+    teamCards += `
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div>
+        <div class="card border-0">
+            <div class="card-body d-flex">
+                <div>
+                    <img src="./${member.img}" class="card-img-top" alt="${member.name}">
+                </div>
+                <div class="p-2 bg-black">
+                  <h5 id="name" class="card-title text-uppercase text-light">${member.name}</h5>
+                  <p id="role" class="card-text text-light">${member.role}</p>
+                  <a id="email" class="py-1">${member.email}</a>
+                </div>  
             </div>
           </div>
         </div>
       </div>
-    </div>
-    `;
+    </div>`;
   }
   //
   ourTeam.innerHTML = teamCards;
