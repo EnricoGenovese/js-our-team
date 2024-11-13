@@ -42,7 +42,7 @@ const teamMembers = [
 /*
 <div class="row d-flex">
     <div class="w-25">
-        <img src="screenshot.png" class="card-img-top" alt="...">
+        <img src="" class="card-img-top" alt="...">
     </div>
     <div class="col-sm-6 col-md-4 mb-3 mb-sm-0">
         <div class="card">
@@ -56,3 +56,36 @@ const teamMembers = [
     </div>
 </div>
 */
+
+
+
+addCard();
+
+function addCard() {
+  const ourTeam = document.getElementById("our-team");
+  let teamCards = "";
+  //
+  for(let member of teamMembers) {
+    teamCards += 
+    `
+    <div class="col-sm-6 col-md-6 col-lg-4">
+      <div class="d-flex">
+        <div>
+          <img src="./${member.img}" class="card-img-top" alt="${member.name}">
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <h5 id="name" class="card-title text-uppercase">${member.name}</h5>
+              <p id="role" class="card-text">${member.role}</p>
+              <a id="email" class="py-1">${member.email}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+  }
+  //
+  ourTeam.innerHTML = teamCards;
+}
